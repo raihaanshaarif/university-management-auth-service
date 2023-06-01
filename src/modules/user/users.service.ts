@@ -1,4 +1,3 @@
-
 import User from "./users.model";
 import { IUser } from "./users.interface";
 import config from "../../config";
