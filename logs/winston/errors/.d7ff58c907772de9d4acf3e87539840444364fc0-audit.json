@@ -9,6 +9,11 @@
             "date": 1686605514730,
             "name": "/Users/raihan/Desktop/@phero/2023/university-management-auth-service/logs/winston/errors/phu-2023-13-06-03-error.log",
             "hash": "8c49dc0e529b4a502bdb90460752ddea3e382aa7b2abbbe2db9107a95d804322"
+        },
+        {
+            "date": 1686607772417,
+            "name": "/Users/raihan/Desktop/@phero/2023/university-management-auth-service/logs/winston/errors/phu-2023-13-06-04-error.log",
+            "hash": "90fdcd215a046018023bfeec8d726bfea3bca3f6b0c52eb92cd7b95502d007b0"
         }
     ],
     "hashType": "sha256"
