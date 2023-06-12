@@ -1,6 +1,6 @@
 import path from 'path'
 import { createLogger, format, transports } from 'winston'
-const { combine, timestamp, label, printf, prettyPrint } = format
+const { combine, timestamp, label, printf } = format
 import DailyRotateFile from 'winston-daily-rotate-file'
 
 //Custom log formatting
