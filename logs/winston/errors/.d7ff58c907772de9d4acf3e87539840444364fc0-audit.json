@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "/Users/raihan/Desktop/@phero/2023/university-management-auth-service/logs/winston/errors/.d7ff58c907772de9d4acf3e87539840444364fc0-audit.json",
+    "files": [
+        {
+            "date": 1686605514730,
+            "name": "/Users/raihan/Desktop/@phero/2023/university-management-auth-service/logs/winston/errors/phu-2023-13-06-03-error.log",
+            "hash": "8c49dc0e529b4a502bdb90460752ddea3e382aa7b2abbbe2db9107a95d804322"
+        }
+    ],
+    "hashType": "sha256"
+}
