@@ -1,19 +1,57 @@
-import { NextFunction, Request, Response } from "express"
-import { IGenericErrorMessage } from "../../interfaces/error";
+/* eslint-disable no-unused-expressions */
+/* eslint-disable no-console */
+import { ErrorRequestHandler } from 'express'
+import config from '../../config'
+import handleValidationError from '../../errors/handleValidationerror'
+import ApiError from '../../errors/ApiError'
+import { IGenericErrorMessage } from '../../interfaces/error'
+import { errorlogger } from '../../shared/logger'
 
+const globalErrorHandler: ErrorRequestHandler = (error, req, res, next) => {
+  // Console log for Dev and Error Log for Production
+  config.env === 'development'
+    ? console.log('Global Error Handler', error)
+    : errorlogger.error('Global Error Handler', error)
 
-const globalErrorHandler = (err, req: Request, res: Response, next: NextFunction) => {
-    let statusCode = 500;
-    let message = "Something went wrong!"
-    let errorMessages: IGenericErrorMessage[] = []
+  let statusCode = 500
+  let message = 'Something went wrong!'
+  let errorMessages: IGenericErrorMessage[] = []
 
-    res.status(statusCode).json({
-        success: false,
-        message,
-        errorMessages,
-        stack: config.env !== "production" ? err?.stack : undefined,
-    })
-    next()
+  if (error.name === 'ValidationError') {
+    const simplifiedError = handleValidationError(error)
+    statusCode = simplifiedError.statusCode
+    message = simplifiedError.message
+    errorMessages = simplifiedError.errorMessages
+  } else if (error instanceof ApiError) {
+    statusCode = error.statusCode
+    message = error.message
+    errorMessages = error?.message
+      ? [
+          {
+            path: '',
+            message: error?.message,
+          },
+        ]
+      : []
+  } else if (error instanceof Error) {
+    message = error?.message
+    errorMessages = error?.message
+      ? [
+          {
+            path: '',
+            message: error?.message,
+          },
+        ]
+      : []
+  }
+
+  res.status(statusCode).json({
+    success: false,
+    message,
+    errorMessages,
+    stack: config.env !== 'production' ? error?.stack : undefined,
+  })
+  next()
 }
 
 export default globalErrorHandler

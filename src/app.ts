@@ -1,10 +1,10 @@
-import express, { Application, NextFunction, Request, Response } from 'express'
-const app: Application = express()
+import express, { Application } from 'express'
 import cors from 'cors'
-// import usersService from './app/modules/user/users.service'
-import usersRouter from './app/modules/user/users.route'
 import globalErrorHandler from './app/middlewares/globalErrorHandler'
+import { UserRoutes } from './app/modules/user/user.route'
+// import ApiError from './errors/ApiError'
 
+const app: Application = express()
 app.use(cors())
 
 // parser
@@ -12,13 +12,12 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
 //Application routes
-app.use('/api/v1/users/', usersRouter)
+app.use('/api/v1/users/', UserRoutes.router)
 
-
-// app.get('/', (req: Request, res: Response, next: NextFunction) => {
-//   throw new Error('Ore baba')
-//   // next('Ore baba')
-// })
+// Testing routes
+app.get('/', async (req: Request, res: Response, next: NextFunction) => {
+  Promise.reject(new Error('Unhandled promise Rejection'))
+})
 
 //Global Error Handler
 app.use(globalErrorHandler)

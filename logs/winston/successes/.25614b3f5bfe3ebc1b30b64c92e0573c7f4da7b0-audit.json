@@ -14,6 +14,26 @@
             "date": 1686607772410,
             "name": "/Users/raihan/Desktop/@phero/2023/university-management-auth-service/logs/winston/successes/phu-2023-13-06-04-success.log",
             "hash": "992cf8e7ac278f71dc656c7853c8ca9f411f614722d3ae939baa8cf7d576fbe7"
+        },
+        {
+            "date": 1686910669498,
+            "name": "/Users/raihan/Desktop/@phero/2023/university-management-auth-service/logs/winston/successes/phu-2023-16-06-16-success.log",
+            "hash": "8720f85d6ea1eec59358bae1391c269ece86b5eeefb34a289a6590857a0bf6af"
+        },
+        {
+            "date": 1686942253647,
+            "name": "/Users/raihan/Desktop/@phero/2023/university-management-auth-service/logs/winston/successes/phu-2023-17-06-01-success.log",
+            "hash": "fec07f42030f7a5bd9b208290497519ce5da146d3b3cdb87265277b0560f26ea"
+        },
+        {
+            "date": 1686945927105,
+            "name": "/Users/raihan/Desktop/@phero/2023/university-management-auth-service/logs/winston/successes/phu-2023-17-06-02-success.log",
+            "hash": "b82da7df0a372afba19196cd4702898fb0a2b40f34945bda9434cd2be7b511bf"
+        },
+        {
+            "date": 1686949213119,
+            "name": "/Users/raihan/Desktop/@phero/2023/university-management-auth-service/logs/winston/successes/phu-2023-17-06-03-success.log",
+            "hash": "5a003b27232210747e5719f051814c98beb67fc3edba885afafd8c884695f308"
         }
     ],
     "hashType": "sha256"
