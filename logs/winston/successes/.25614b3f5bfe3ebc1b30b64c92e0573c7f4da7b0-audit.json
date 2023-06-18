@@ -109,6 +109,11 @@
             "date": 1687125756578,
             "name": "/Users/raihan/Desktop/@phero/2023/university-management-auth-service/logs/winston/successes/phu-2023-19-06-04-success.log",
             "hash": "8a8e6fc9add46a8c296c9d0135cef441cd44b27318a90ee2ec0a5118ad1dfc98"
+        },
+        {
+            "date": 1687129345684,
+            "name": "/Users/raihan/Desktop/@phero/2023/university-management-auth-service/logs/winston/successes/phu-2023-19-06-05-success.log",
+            "hash": "ed68d4bfff6cb433876c3ecb490ee45554931b5cdb4ae98f1157e3792b23b7bb"
         }
     ],
     "hashType": "sha256"
