@@ -1,18 +1,24 @@
 /* eslint-disable no-unused-expressions */
+/* eslint-disable no-unused-vars */
 /* eslint-disable no-console */
-import { ErrorRequestHandler } from 'express';
+import { ErrorRequestHandler, NextFunction, Request, Response } from 'express';
 import config from '../../config';
-import handleValidationError from '../../errors/handleValidationError';
 import ApiError from '../../errors/ApiError';
-import { IGenericErrorMessage } from '../../interfaces/error';
-import { errorlogger } from '../../shared/logger';
+import handleValidationError from '../../errors/handleValidationError';
 import { ZodError } from 'zod';
 import handleZodError from '../../errors/handleZodError';
+import { IGenericErrorMessage } from '../../interfaces/error';
+import { errorlogger } from '../../shared/logger';
 
-const globalErrorHandler: ErrorRequestHandler = (error, req, res, next) => {
+const globalErrorHandler: ErrorRequestHandler = (
+  error,
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
   // Console log for Dev and Error Log for Production
   config.env === 'development'
-    ? console.log('Global Error Handler', error)
+    ? console.log('Global Error Handler', { error })
     : errorlogger.error('Global Error Handler', error);
 
   let statusCode = 500;

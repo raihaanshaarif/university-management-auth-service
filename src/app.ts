@@ -1,11 +1,10 @@
-import express, { Application, NextFunction, Request, Response } from 'express';
 import cors from 'cors';
+import express, { Application, NextFunction, Request, Response } from 'express';
+import httpStatus from 'http-status';
 import globalErrorHandler from './app/middlewares/globalErrorHandler';
 import routes from './app/routes';
-import httpStatus from 'http-status';
-// import ApiError from './errors/ApiError'
-
 const app: Application = express();
+
 app.use(cors());
 
 // parser
