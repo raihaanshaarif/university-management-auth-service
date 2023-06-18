@@ -10,7 +10,6 @@ const createSemester = catchAsync(
     const result = await AcademicSemesterService.createSemester(
       academicSemesterData
     );
-    next();
     // res.status(200).json({
     //   success: true,
     //   message: 'Semester created successfully',
@@ -23,6 +22,7 @@ const createSemester = catchAsync(
       message: 'Semester created successfully',
       data: result,
     });
+    next();
   }
 );
 
